@@ -57,18 +57,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaDeObjetoResultado.cs" />
     <Compile Include="ConsultaDePreco.cs" />
     <Compile Include="ConsultaDePrecoResultado.cs" />
     <Compile Include="Correio.cs" />
     <Compile Include="CorreioWebService.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Ferramentas.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="ForCorreios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ForCorreios.Designer.cs">
+      <DependentUpon>ForCorreios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +81,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ForCorreios.resx">
+      <DependentUpon>ForCorreios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

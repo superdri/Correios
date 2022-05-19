@@ -267,6 +267,8 @@ public partial class returnObjetoEvento
 
     private string descricaoField;
 
+    private string detalheField;
+
     private string localField;
 
     private byte codigoField;
@@ -276,6 +278,8 @@ public partial class returnObjetoEvento
     private string ufField;
 
     private returnObjetoEventoDestino destinoField;
+
+    private returnObjetoEventoEndereco enderecoField;
 
     /// <remarks/>
     public string tipo
@@ -343,6 +347,19 @@ public partial class returnObjetoEvento
     }
 
     /// <remarks/>
+    public string detalhe
+    {
+        get
+        {
+            return this.detalheField;
+        }
+        set
+        {
+            this.detalheField = value;
+        }
+    }
+
+    /// <remarks/>
     public string local
     {
         get
@@ -404,6 +421,19 @@ public partial class returnObjetoEvento
         set
         {
             this.destinoField = value;
+        }
+    }
+
+    /// <remarks/>
+    public returnObjetoEventoEndereco endereco
+    {
+        get
+        {
+            return this.enderecoField;
+        }
+        set
+        {
+            this.enderecoField = value;
         }
     }
 }
@@ -487,6 +517,119 @@ public partial class returnObjetoEventoDestino
         set
         {
             this.ufField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class returnObjetoEventoEndereco
+{
+
+    private ushort codigoField;
+
+    private uint cepField;
+
+    private string logradouroField;
+
+    private ushort numeroField;
+
+    private string localidadeField;
+
+    private string ufField;
+
+    private string bairroField;
+
+    /// <remarks/>
+    public ushort codigo
+    {
+        get
+        {
+            return this.codigoField;
+        }
+        set
+        {
+            this.codigoField = value;
+        }
+    }
+
+    /// <remarks/>
+    public uint cep
+    {
+        get
+        {
+            return this.cepField;
+        }
+        set
+        {
+            this.cepField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string logradouro
+    {
+        get
+        {
+            return this.logradouroField;
+        }
+        set
+        {
+            this.logradouroField = value;
+        }
+    }
+
+    /// <remarks/>
+    public ushort numero
+    {
+        get
+        {
+            return this.numeroField;
+        }
+        set
+        {
+            this.numeroField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string localidade
+    {
+        get
+        {
+            return this.localidadeField;
+        }
+        set
+        {
+            this.localidadeField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string uf
+    {
+        get
+        {
+            return this.ufField;
+        }
+        set
+        {
+            this.ufField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string bairro
+    {
+        get
+        {
+            return this.bairroField;
+        }
+        set
+        {
+            this.bairroField = value;
         }
     }
 }

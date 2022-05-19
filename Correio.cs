@@ -111,11 +111,10 @@ namespace Correios
         public async Task<Envelope> Consultar_ObjetoAsync(string Objeto, string Usuario, string Senha, string Tipo = "T", string Resultado = "L")
         {
 
-            var xDoc = new System.Xml.XmlDocument();
-            var Obj = new ConsultaDeObjetoResultado();
             var client = new ws.correios.rastro.ServiceClient();
             var requestInterceptor = new CorreioWebService.InspectorBehavior();
             var Dados = new Envelope();
+            string arquivo_temp = @"c:\gearlive\temp\" + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + "_" + Objeto + ".xml";
 
             client.Endpoint.Behaviors.Add(requestInterceptor);
 
@@ -129,13 +128,13 @@ namespace Correios
                 {
 
                     // realiza consulta no correio               
-                    client.buscaEventos("SHINIKO123", "N6TS?E<XCV", "L", "T", "101", Objeto);
+                    client.buscaEventos(Usuario, Senha, Tipo, Resultado, "101", Objeto);
 
                     //salva o arquivo da consulta
-                    System.IO.File.WriteAllText(@"c:\gearlive\temp\consulta.xml", requestInterceptor.LastResponseXML);
+                    System.IO.File.WriteAllText(arquivo_temp, requestInterceptor.LastResponseXML);
 
                     XmlSerializer ser = new XmlSerializer(typeof(Envelope));
-                    TextReader textReader = (TextReader)new StreamReader(@"c:\gearlive\temp\consulta.xml");
+                    TextReader textReader = (TextReader)new StreamReader(arquivo_temp);
                     XmlTextReader reader = new XmlTextReader(textReader);
                     reader.Read();
 
